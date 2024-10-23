@@ -30,6 +30,7 @@ def cool_intro_message():
             num_of_hashes = x + 1
             print("#" * (num_of_hashes) + " " * (width*2 - empty_space-2) +  "#" * (num_of_hashes))
             empty_space = empty_space + 2
+            time.sleep(0.5)
         else:
             print("#" * (num_of_hashes) + " " * (empty_space + x * 2) +  "#" * (num_of_hashes))
             time.sleep(0.5)
@@ -48,6 +49,7 @@ def image_save_handling(img = Image.open(r"saved_images\Default.jpg")):
                 if len(user_given_text) > 8:
                     print("Error: can't be longer than 8 characters")
                 elif user_given_text == '1': 
+                    print("Editing image, please wait...")
                     result = add_text(img)
                     print("saving image, please wait...")
                     result.save(r"saved_images\text_edited_image.png")
@@ -55,6 +57,7 @@ def image_save_handling(img = Image.open(r"saved_images\Default.jpg")):
                     result.show("after")
                     break
                 else:
+                    print("Editing image, please wait...")
                     result = add_text(img, user_given_text)
                     print("saving image, please wait...")
                     result.save(r"saved_images\text_edited_image.png")
@@ -64,6 +67,7 @@ def image_save_handling(img = Image.open(r"saved_images\Default.jpg")):
             break
         # add filter
         elif user_choice == '2':
+            print("Editing image, please wait...")
             result = add_filter(img)
             print("saving image, please wait...")
             result.save(r"saved_images\filter_edited_image.png")
