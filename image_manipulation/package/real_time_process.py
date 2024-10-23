@@ -9,7 +9,7 @@ def check_size(image):
     new_height = int((new_width * 0.75))
     resized_image = cv.resize(image, (new_width, new_height))
     return resized_image
-# draws a 3 broken zigzag to mimic lightning
+# draws 3 broken zigzags to mimic lightning
 def broken_zigzag(image):
     start_points = [image.shape[1] // 2, image.shape[0] // 2]
     num_of_breaks = 7
